@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restyling siti — ConVoglio ONLUS e ASD San Paolo Torino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+.bar{background:#0F1115;color:#C9CED8;font-family:Inter,system-ui,sans-serif;font-size:14px}
+.bar .in{max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;justify-content:space-between}
+.bar nav{display:flex;gap:6px;flex-wrap:wrap}
+.bar a{color:#C9CED8;text-decoration:none;font-weight:600;padding:10px 14px;border-radius:999px;min-height:24px}
+.bar a[aria-current="page"]{background:#FFFFFF;color:#0F1115}
+[data-view="cv"]{margin:0;font-family:Inter,system-ui,sans-serif;color:#1B1F2A;background:#FFFFFF}
+[data-view="cv"] a{color:#0E6E66}
+[data-view="cv"] a:hover{color:#0A524C}
+[data-view="cv"] h1,[data-view="cv"] h2,[data-view="cv"] h3{font-family:"Bricolage Grotesque",Inter,sans-serif;margin:0}
+[data-view="cv"] .wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+[data-view="cv"] .nav a{color:#1B1F2A;text-decoration:none;font-weight:500}
+[data-view="cv"] .nav a:hover{color:#C8401F}
+[data-view="cv"] .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;box-sizing:border-box}
+[data-view="cv"] .btn-primary{background:#C8401F;color:#FFFFFF}
+[data-view="cv"] .btn-primary:hover{background:#A9351A;color:#FFFFFF}
+[data-view="cv"] .btn-ghost{background:transparent;color:#1B1F2A;border:2px solid #1B1F2A}
+[data-view="cv"] .btn-ghost:hover{background:#1B1F2A;color:#FFFFFF}
+@media (max-width:860px){[data-view="cv"] .nav{display:none}
+[data-view="cv"] .hide-sm{display:none}}
+[data-view="cv"] .menu-btn{display:none}
+@media (max-width:860px){[data-view="cv"] .menu-btn{display:inline-flex}
+[data-view="cv"] .hdr-cta{display:none !important}
+[data-view="cv"] .nav{display:none !important}}
+[data-view="cv"] details.mnav{position:relative}
+[data-view="cv"] details.mnav summary{list-style:none;cursor:pointer;min-width:48px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px}
+[data-view="cv"] details.mnav summary::-webkit-details-marker{display:none}
+[data-view="cv"] details.mnav .panel{position:absolute;right:0;top:56px;z-index:50;min-width:240px;border-radius:16px;padding:10px;display:flex;flex-direction:column;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+[data-view="cv"] details.mnav .panel a{padding:14px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+@media (max-width:600px){[data-view="cv"] [style*="minmax(340px"],[data-view="cv"] [style*="minmax(320px"]{grid-template-columns:minmax(0,1fr) !important}
+[data-view="cv"] [style*="padding: 56px 48px"]{padding:36px 22px !important}
+[data-view="cv"] [style*="padding: 48px;"],[data-view="cv"] [style*="padding: 40px;"]{padding:28px 22px !important}
+[data-view="cv"] h1{font-size:46px !important;overflow-wrap:break-word}
+[data-view="cv"] h2[style*="font-size: 64px"]{font-size:46px !important}
+[data-view="cv"] h2[style*="font-size: 44px"],[data-view="cv"] h2[style*="font-size: 40px"]{font-size:34px !important}
+[data-view="cv"] [style*="height: 480px"],[data-view="cv"] [style*="height: 460px"]{height:280px !important}
+[data-view="cv"] [style*="padding: 18px 24px"]{flex-wrap:wrap}
+[data-view="cv"] header [style*="font-size: 26px; letter-spacing"]{font-size:21px !important}
+[data-view="cv"] header [style*="letter-spacing: 0.16em"]{display:none}
+[data-view="cv"] header span[style*="color: #AEB4C0; font-weight: 500"]{display:none}}
+html{scroll-behavior:smooth}
+[data-view="cv"] img,[data-view="cv"] svg{max-width:100%}
+[data-view="cv"] header svg{flex-shrink:0}
+[data-view="ci"]{margin:0;font-family:Inter,system-ui,sans-serif;color:#1B1F2A;background:#FFFFFF}
+[data-view="ci"] a{color:#0E6E66}
+[data-view="ci"] a:hover{color:#0A524C}
+[data-view="ci"] h1,[data-view="ci"] h2,[data-view="ci"] h3{font-family:"Bricolage Grotesque",Inter,sans-serif;margin:0}
+[data-view="ci"] .wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+[data-view="ci"] .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;box-sizing:border-box}
+[data-view="ci"] .btn-yellow{background:#F2B33D;color:#1B1F2A}
+[data-view="ci"] .btn-yellow:hover{background:#E0A12B;color:#1B1F2A}
+[data-view="ci"] .btn-line{border:2px solid #FFFFFF;color:#FFFFFF}
+[data-view="ci"] .btn-line:hover{background:#FFFFFF;color:#1B1F2A}
+[data-view="ci"] .btn-primary{background:#C8401F;color:#FFFFFF}
+[data-view="ci"] .btn-primary:hover{background:#A9351A;color:#FFFFFF}
+[data-view="ci"] .menu-btn{display:none}
+@media (max-width:860px){[data-view="ci"] .menu-btn{display:inline-flex}
+[data-view="ci"] .hdr-cta{display:none !important}
+[data-view="ci"] .nav{display:none !important}}
+[data-view="ci"] details.mnav{position:relative}
+[data-view="ci"] details.mnav summary{list-style:none;cursor:pointer;min-width:48px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px}
+[data-view="ci"] details.mnav summary::-webkit-details-marker{display:none}
+[data-view="ci"] details.mnav .panel{position:absolute;right:0;top:56px;z-index:50;min-width:240px;border-radius:16px;padding:10px;display:flex;flex-direction:column;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+[data-view="ci"] details.mnav .panel a{padding:14px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+@media (max-width:600px){[data-view="ci"] [style*="minmax(340px"],[data-view="ci"] [style*="minmax(320px"]{grid-template-columns:minmax(0,1fr) !important}
+[data-view="ci"] [style*="padding: 56px 48px"]{padding:36px 22px !important}
+[data-view="ci"] [style*="padding: 48px;"],[data-view="ci"] [style*="padding: 40px;"]{padding:28px 22px !important}
+[data-view="ci"] h1{font-size:46px !important;overflow-wrap:break-word}
+[data-view="ci"] h2[style*="font-size: 64px"]{font-size:46px !important}
+[data-view="ci"] h2[style*="font-size: 44px"],[data-view="ci"] h2[style*="font-size: 40px"]{font-size:34px !important}
+[data-view="ci"] [style*="height: 480px"],[data-view="ci"] [style*="height: 460px"]{height:280px !important}
+[data-view="ci"] [style*="padding: 18px 24px"]{flex-wrap:wrap}
+[data-view="ci"] header [style*="font-size: 26px; letter-spacing"]{font-size:21px !important}
+[data-view="ci"] header [style*="letter-spacing: 0.16em"]{display:none}
+[data-view="ci"] header span[style*="color: #AEB4C0; font-weight: 500"]{display:none}}
+html{scroll-behavior:smooth}
+[data-view="ci"] img,[data-view="ci"] svg{max-width:100%}
+[data-view="ci"] header svg{flex-shrink:0}
+[data-view="sp"]{margin:0;font-family:Barlow,system-ui,sans-serif;color:#0E1A33;background:#FFFFFF}
+[data-view="sp"] a{color:#0B3D91}
+[data-view="sp"] a:hover{color:#062457}
+[data-view="sp"] h1,[data-view="sp"] h2,[data-view="sp"] h3{font-family:"Barlow Condensed","Arial Narrow",Barlow,sans-serif;overflow-wrap:break-word;margin:0;text-transform:uppercase}
+[data-view="sp"] .wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+[data-view="sp"] .nav a{color:#FFFFFF;text-decoration:none;font-weight:600;font-size:16px;letter-spacing:0.04em;text-transform:uppercase}
+[data-view="sp"] .nav a:hover{color:#BFD9FF}
+[data-view="sp"] .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:12px;font-weight:600;text-decoration:none;font-size:17px;box-sizing:border-box}
+[data-view="sp"] .btn-white{background:#FFFFFF;color:#0B3D91}
+[data-view="sp"] .btn-white:hover{background:#E6EEFA;color:#062457}
+[data-view="sp"] .btn-navy{background:#0B3D91;color:#FFFFFF}
+[data-view="sp"] .btn-navy:hover{background:#062457;color:#FFFFFF}
+[data-view="sp"] .btn-outline{border:2px solid #FFFFFF;color:#FFFFFF}
+[data-view="sp"] .btn-outline:hover{background:#FFFFFF;color:#0B3D91}
+[data-view="sp"] .stripes{background:repeating-linear-gradient(90deg,#0B3D91 0 56px,#134BA8 56px 112px)}
+[data-view="sp"] .field{min-height:52px;border-radius:12px;border:1px solid #B9C6DB;padding:0 16px;font-size:16px;font-family:Barlow,sans-serif;color:#0E1A33;background:#FFFFFF}
+@media (max-width:860px){[data-view="sp"] .nav{display:none}}
+[data-view="sp"] .menu-btn{display:none}
+@media (max-width:860px){[data-view="sp"] .menu-btn{display:inline-flex}
+[data-view="sp"] .hdr-cta{display:none !important}
+[data-view="sp"] .nav{display:none !important}}
+[data-view="sp"] details.mnav{position:relative}
+[data-view="sp"] details.mnav summary{list-style:none;cursor:pointer;min-width:48px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px}
+[data-view="sp"] details.mnav summary::-webkit-details-marker{display:none}
+[data-view="sp"] details.mnav .panel{position:absolute;right:0;top:56px;z-index:50;min-width:240px;border-radius:16px;padding:10px;display:flex;flex-direction:column;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+[data-view="sp"] details.mnav .panel a{padding:14px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+@media (max-width:600px){[data-view="sp"] [style*="minmax(340px"],[data-view="sp"] [style*="minmax(320px"]{grid-template-columns:minmax(0,1fr) !important}
+[data-view="sp"] [style*="padding: 56px 48px"]{padding:36px 22px !important}
+[data-view="sp"] [style*="padding: 48px;"],[data-view="sp"] [style*="padding: 40px;"]{padding:28px 22px !important}
+[data-view="sp"] h1{font-size:46px !important;overflow-wrap:break-word}
+[data-view="sp"] h2[style*="font-size: 64px"]{font-size:46px !important}
+[data-view="sp"] h2[style*="font-size: 44px"],[data-view="sp"] h2[style*="font-size: 40px"]{font-size:34px !important}
+[data-view="sp"] [style*="height: 480px"],[data-view="sp"] [style*="height: 460px"]{height:280px !important}
+[data-view="sp"] [style*="padding: 18px 24px"]{flex-wrap:wrap}
+[data-view="sp"] header [style*="font-size: 26px; letter-spacing"]{font-size:21px !important}
+[data-view="sp"] header [style*="letter-spacing: 0.16em"]{display:none}
+[data-view="sp"] header span[style*="color: #AEB4C0; font-weight: 500"]{display:none}}
+html{scroll-behavior:smooth}
+[data-view="sp"] img,[data-view="sp"] svg{max-width:100%}
+[data-view="sp"] header svg{flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="bar"><div class="in"><span>Proposta di restyling · foto e loghi da inserire</span><nav aria-label="Pagine"><a href="#cv" data-tab="cv">ConVoglio</a><a href="#ci" data-tab="ci">Cirillico</a><a href="#sp" data-tab="sp">San Paolo</a></nav></div></div>
+<div class="view" data-view="cv" hidden>
+<div style="width: 100%; min-height: 100vh; background: #FFFFFF">
+<header style="border-bottom: 1px solid #E6E8EC; background: #FFFFFF">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 80px">
+<a href="#cv-top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1B1F2A" aria-label="ConVoglio ONLUS, home">
+<svg width="44" height="28" viewBox="0 0 44 28" fill="none" aria-hidden="true"><rect x="1" y="4" width="12" height="16" rx="4" fill="#C8401F"></rect><rect x="16" y="4" width="12" height="16" rx="4" fill="#F2B33D"></rect><rect x="31" y="4" width="12" height="16" rx="4" fill="#0E6E66"></rect><circle cx="7" cy="24" r="3" fill="#1B1F2A"></circle><circle cx="22" cy="24" r="3" fill="#1B1F2A"></circle><circle cx="37" cy="24" r="3" fill="#1B1F2A"></circle></svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">ConVoglio</span>
+<span style="font-size: 11px; letter-spacing: 0.14em; font-weight: 600; color: #5B6170; margin-top: 4px">ONLUS · TORINO</span>
+</span>
+</a>
+<nav class="nav" aria-label="Menu principale" style="display: flex; gap: 32px; font-size: 16px">
+<a href="#cv-chi-siamo">Chi siamo</a>
+<a href="#cv-progetti">Progetti</a>
+<a href="#cv-eventi">Eventi</a>
+<a href="#cv-sostienici">Sostienici</a>
+<a href="#cv-contatti">Contatti</a>
+</nav>
+<a class="btn btn-primary hdr-cta" href="#cv-sostienici">Dona ora</a>
+<details class="mnav menu-btn"><summary aria-label="Apri il menu" style="background:#F2F4F7;color:#1B1F2A"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></summary><div class="panel" style="background:#FFFFFF"><a href="#cv-chi-siamo" style="color:#1B1F2A">Chi siamo</a><a href="#cv-progetti" style="color:#1B1F2A">Progetti</a><a href="#cv-eventi" style="color:#1B1F2A">Eventi</a><a href="#cv-sostienici" style="color:#1B1F2A">Sostienici</a><a href="#cv-contatti" style="color:#1B1F2A">Contatti</a><a href="#cv-sostienici" style="background:#C8401F;color:#FFFFFF;text-align:center;margin-top:6px">Dona ora</a></div></details>
+</div>
+</header>
+<section id="cv-top" style="padding: 88px 0 96px">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; background: #FDF0D5; color: #6B4A00; font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 999px">Associazione di volontariato · Torino</span>
+<h1 style="font-size: clamp(44px, 6vw, 72px); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em">Eventi che diventano aiuto concreto.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3C4250; max-width: 540px">Organizziamo spettacoli, tornei e iniziative solidali. I fondi raccolti sostengono persone in difficoltà, la ricerca medica, l'ambiente e il contrasto alla violenza.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-primary" href="#cv-sostienici">Sostienici</a>
+<a class="btn btn-ghost" href="#cv-progetti">Scopri i progetti</a>
+</div>
+</div>
+<div style="position: relative; height: 480px; border-radius: 28px; background: #E9EEF2; display: flex; align-items: center; justify-content: center; overflow: hidden">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #5B6170; font-size: 15px">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="9" cy="11" r="2"></circle><path d="M21 17l-5-5-9 7"></path></svg>
+<span>Foto: volontari a un evento</span>
+</div>
+<div style="position: absolute; left: 20px; bottom: 20px; background: #FFFFFF; border-radius: 18px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; box-shadow: 0 8px 24px rgba(27,31,42,0.10)">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #C8401F; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+</span>
+<span style="display: flex; flex-direction: column">
+<strong style="font-size: 15px">Dona il tuo 5x1000</strong>
+<span style="font-size: 14px; color: #5B6170">C.F. 97785290012</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<section id="cv-chi-siamo" style="background: #F2F4F7; padding: 96px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">CHI SIAMO</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">Mettiamo la nostra esperienza al servizio di chi aiuta.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3C4250">Aiutiamo persone e associazioni che hanno bisogno di competenze per organizzare eventi di raccolta fondi per cause benefiche.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+<article style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: #FCE4DC; color: #C8401F; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+<h3 style="font-size: 22px; font-weight: 600">Beneficenza indiretta</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3C4250">Mettiamo i fondi raccolti a disposizione delle associazioni che fanno beneficenza diretta ma non hanno risorse per i loro progetti.</p>
+</article>
+<article style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: #FDF0D5; color: #8A5A00; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span>
+<h3 style="font-size: 22px; font-weight: 600">Vicini a chi è in difficoltà</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3C4250">Sosteniamo chi vive povertà, solitudine o emarginazione e aiutiamo ognuno a sviluppare le proprie capacità.</p>
+</article>
+<article style="background: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: #DDF0EE; color: #0E6E66; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V7a5 5 0 0 1 10 0v4"></path><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M12 15v3"></path></svg></span>
+<h3 style="font-size: 22px; font-weight: 600">Solidarietà tra generazioni</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3C4250">Offriamo ai giovani attività costruttive per il tempo libero e agli anziani un luogo dove la loro esperienza conta.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="cv-progetti" style="padding: 96px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">PROGETTI</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">I nostri progetti</h2>
+</div>
+<a href="#cv-progetti" style="font-weight: 600; font-size: 16px">Tutti gli 11 progetti →</a>
+</div>
+<a href="#ci" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); background: #1B1F2A; color: #FFFFFF; border-radius: 28px; overflow: hidden; text-decoration: none">
+<div style="padding: 48px; display: flex; flex-direction: column; gap: 18px; justify-content: center">
+<span style="align-self: flex-start; background: #F2B33D; color: #1B1F2A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">In evidenza</span>
+<h3 style="font-size: 40px; line-height: 1.05; font-weight: 800">USPR Cirillico</h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5D9E0">Una squadra di calcio maschile e femminile che unisce chi parla russo a Torino: studenti, rifugiati, emigrati. L'amicizia vale più di ogni conflitto.</p>
+<span style="font-weight: 600; color: #F2B33D">Scopri il progetto →</span>
+</div>
+<div style="min-height: 340px; background: #2A3040; display: flex; align-items: center; justify-content: center; color: #AEB4C0; font-size: 15px">Foto: la squadra Cirillico</div>
+</a>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<article style="border: 1px solid #E6E8EC; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 160px; background: #E3ECF8; display: flex; align-items: center; justify-content: center; color: #4A5A72; font-size: 14px">Foto</div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 20px; font-weight: 600">ASD San Paolo Torino</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">Il calcio del quartiere San Paolo, anche con la She7 SPT Cup.</p>
+</div>
+</article>
+<article style="border: 1px solid #E6E8EC; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 160px; background: #FDF0D5; display: flex; align-items: center; justify-content: center; color: #6B4A00; font-size: 14px">Foto</div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 20px; font-weight: 600">Regala un Banco</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">[Descrizione breve del progetto]</p>
+</div>
+</article>
+<article style="border: 1px solid #E6E8EC; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 160px; background: #FCE4DC; display: flex; align-items: center; justify-content: center; color: #8A2E16; font-size: 14px">Foto</div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 20px; font-weight: 600">Distribuzione Giocattoli</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">[Descrizione breve del progetto]</p>
+</div>
+</article>
+<article style="border: 1px solid #E6E8EC; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 160px; background: #DDF0EE; display: flex; align-items: center; justify-content: center; color: #0A524C; font-size: 14px">Foto</div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 20px; font-weight: 600">DISPANETTONI</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">[Descrizione breve del progetto]</p>
+</div>
+</article>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">Colombe per la Pace</span>
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">Le Sartine</span>
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">I Cosplayer</span>
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">Le Bomboniere</span>
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">Le Mascherine</span>
+<span style="border: 1px solid #D5D9E0; border-radius: 999px; padding: 8px 16px; font-size: 15px">Regali Solidali</span>
+</div>
+</div>
+</section>
+<section id="cv-eventi" style="background: #F2F4F7; padding: 96px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">EVENTI</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">Ogni evento è un vagone in più.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3C4250">Spettacoli, corse, tornei e feste per bambini: ogni evento raccoglie fondi per chi ne ha bisogno.</p>
+<a href="#cv-eventi" style="font-weight: 600; font-size: 16px">Archivio eventi →</a>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; background: #FFFFFF; border-radius: 22px; overflow: hidden">
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E6E8EC"><span style="font-weight: 600; font-size: 17px">RESPECT: lo Spettacolo</span><span style="font-size: 14px; color: #5B6170">Spettacolo</span></li>
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E6E8EC"><span style="font-weight: 600; font-size: 17px">Run for Good</span><span style="font-size: 14px; color: #5B6170">Corsa solidale</span></li>
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E6E8EC"><span style="font-weight: 600; font-size: 17px">Babbi Natale inForma</span><span style="font-size: 14px; color: #5B6170">Natale</span></li>
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E6E8EC"><span style="font-weight: 600; font-size: 17px">Kids for Children</span><span style="font-size: 14px; color: #5B6170">Bambini</span></li>
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E6E8EC"><span style="font-weight: 600; font-size: 17px">International TalenTO 2018</span><span style="font-size: 14px; color: #5B6170">Talent show</span></li>
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 24px"><span style="font-weight: 600; font-size: 17px">+ altri 8 eventi</span><span style="font-size: 14px; color: #5B6170">Archivio</span></li>
+</ul>
+</div>
+</section>
+<section id="cv-sostienici" style="padding: 96px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">SOSTIENICI</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">Tre modi per salire a bordo</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+<article style="background: #C8401F; color: #FFFFFF; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="font-size: 26px; font-weight: 800">5x1000</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6">Non ti costa nulla: nella dichiarazione dei redditi firma e scrivi il nostro codice fiscale.</p>
+<div style="margin-top: auto; background: rgba(255,255,255,0.14); border-radius: 14px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.04em">97785290012</span>
+<button type="button" id="cv-copycf" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #FFFFFF; color: #C8401F; font-weight: 600; font-size: 15px; cursor: pointer">Copia</button>
+</div>
+</article>
+<article style="background: #F2F4F7; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="font-size: 26px; font-weight: 800">Fai una donazione</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3C4250">Con bonifico, Satispay o PayPal: sostieni direttamente i nostri progetti.</p>
+<div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px">
+<a class="btn btn-primary" href="#cv-sostienici">Dona ora</a>
+<a class="btn btn-ghost" href="#cv-sostienici">IBAN</a>
+</div>
+</article>
+<article style="background: #F2F4F7; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="font-size: 26px; font-weight: 800">Diventa volontario</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3C4250">Hai tempo, idee o competenze? Aiutaci a organizzare il prossimo evento.</p>
+<div style="margin-top: auto">
+<a class="btn btn-ghost" href="#cv-contatti">Iscriviti</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section style="padding: 0 0 96px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<h2 style="font-size: 22px; font-weight: 600; color: #5B6170">Il nostro network</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<a href="https://www.centropuzzle.it/minipuzzle/" style="border: 1px solid #E6E8EC; border-radius: 18px; padding: 24px; text-decoration: none; color: #1B1F2A; font-weight: 600; font-size: 17px; min-height: 88px; display: flex; align-items: center">Centro Puzzle · Minipuzzle</a>
+<a href="https://www.progettomitofusina2.com/" style="border: 1px solid #E6E8EC; border-radius: 18px; padding: 24px; text-decoration: none; color: #1B1F2A; font-weight: 600; font-size: 17px; min-height: 88px; display: flex; align-items: center">Progetto Mitofusina 2</a>
+<a href="https://volontariatotorino.it/" style="border: 1px solid #E6E8EC; border-radius: 18px; padding: 24px; text-decoration: none; color: #1B1F2A; font-weight: 600; font-size: 17px; min-height: 88px; display: flex; align-items: center">Volontariato Torino · Vol.To</a>
+<a href="https://www.terzasettimana.org/" style="border: 1px solid #E6E8EC; border-radius: 18px; padding: 24px; text-decoration: none; color: #1B1F2A; font-weight: 600; font-size: 17px; min-height: 88px; display: flex; align-items: center">Terza Settimana</a>
+</div>
+</div>
+</section>
+<section style="padding: 0 0 96px">
+<div class="wrap">
+<div style="background: #0E6E66; color: #FFFFFF; border-radius: 28px; padding: 56px 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="font-size: 36px; line-height: 1.1; font-weight: 800">Resta sul treno</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #D3ECE9">Ricevi i prossimi eventi e come partecipare. Niente spam.</p>
+</div>
+<form id="cv-newsletter" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end">
+<label style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 240px; font-size: 14px; font-weight: 600">La tua email
+<input type="email" name="email" required placeholder="nome@email.it" style="min-height: 52px; border-radius: 14px; border: 0; padding: 0 18px; font-size: 16px; font-family: Inter, sans-serif; color: #1B1F2A"></label>
+<button type="submit" style="min-height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #F2B33D; color: #1B1F2A; font-weight: 600; font-size: 16px; cursor: pointer">Iscriviti</button>
+</form>
+</div>
+</div>
+</section>
+<footer id="cv-contatti" style="background: #1B1F2A; color: #D5D9E0; padding: 64px 0 40px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; color: #FFFFFF">ConVoglio</span>
+<p style="margin: 0; font-size: 15px; line-height: 1.6">Associazione di volontariato. C.F. 97785290012</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.6">
+<strong style="color: #FFFFFF">Sede</strong>
+<span>Via Giolitti 21, 10123 Torino</span>
+<span>presso il Centro Servizi Vol.To</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.6">
+<strong style="color: #FFFFFF">Contatti</strong>
+<a href="tel:+393514315237" style="color: #D5D9E0">+39 351 431 5237</a>
+<a href="mailto:infoconvoglio@gmail.com" style="color: #D5D9E0">infoconvoglio@gmail.com</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.6">
+<strong style="color: #FFFFFF">Seguici</strong>
+<a href="https://www.facebook.com/ConVoglioonlus" style="color: #D5D9E0">Facebook</a>
+<a href="https://www.instagram.com/convoglioonlus" style="color: #D5D9E0">Instagram</a>
+</div>
+</div>
+<div style="border-top: 1px solid #333A4A; padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #AEB4C0">
+<span>© ConVoglio ONLUS</span>
+<span><a href="#cv-top" style="color: #AEB4C0">Documenti</a> · <a href="#cv-top" style="color: #AEB4C0">Privacy</a></span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<div class="view" data-view="ci" hidden>
+<div style="width: 100%; min-height: 100vh; background: #FFFFFF">
+<header style="background: #1B1F2A; color: #FFFFFF">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px">
+<a href="#cv-progetti" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-weight: 600">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">ConVoglio</span>
+<span style="color: #AEB4C0; font-weight: 500">/ Progetti</span>
+</a>
+<div role="group" aria-label="Lingua" style="display: flex; gap: 4px; background: #2A3040; border-radius: 999px; padding: 4px">
+<button type="button" data-lang="it" aria-pressed="true" style="min-height: 44px; min-width: 48px; padding: 0 14px; border-radius: 999px; border: 0; font-weight: 600; font-size: 14px; cursor: pointer; font-family: Inter, sans-serif; background: #F2B33D; color: #1B1F2A">IT</button><button type="button" data-lang="ru" aria-pressed="false" style="min-height: 44px; min-width: 48px; padding: 0 14px; border-radius: 999px; border: 0; font-weight: 600; font-size: 14px; cursor: pointer; font-family: Inter, sans-serif; background: transparent; color: #D5D9E0">RU</button><button type="button" data-lang="en" aria-pressed="false" style="min-height: 44px; min-width: 48px; padding: 0 14px; border-radius: 999px; border: 0; font-weight: 600; font-size: 14px; cursor: pointer; font-family: Inter, sans-serif; background: transparent; color: #D5D9E0">EN</button>
+</div>
+</div>
+</header>
+<section style="background: #1B1F2A; color: #FFFFFF; padding: 72px 0 96px">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="background: #F2B33D; color: #1B1F2A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Calcio maschile</span>
+<span style="background: #F2B33D; color: #1B1F2A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Calcio femminile</span>
+<span style="border: 1px solid #4A5163; color: #D5D9E0; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Torino · dal 2018</span>
+</div>
+<h1 style="font-size: clamp(48px, 7vw, 88px); line-height: 0.98; font-weight: 800; letter-spacing: -0.02em">USPR Cirillico</h1>
+<p style="margin: 0; font-size: 15px; letter-spacing: 0.12em; font-weight: 600; color: #F2B33D"><span data-i18n="sub">UNIONE SPORTIVA PARLANTI RUSSO</span></p>
+<p style="margin: 0; font-size: 22px; line-height: 1.5; color: #D5D9E0; max-width: 560px"><span data-i18n="lead">Una squadra contro la guerra: qui l’amicizia vale più di ogni conflitto.</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-yellow" href="https://forms.gle/dPamoQn5Lc6hvMgG8"><span data-i18n="cta">Unisciti alla squadra</span></a>
+<a class="btn btn-line" href="#ci-storia"><span data-i18n="cta2">La nostra storia</span></a>
+</div>
+</div>
+<div style="height: 460px; border-radius: 28px; background: #2A3040; display: flex; align-items: center; justify-content: center; color: #AEB4C0; font-size: 15px">Foto: la squadra in campo</div>
+</div>
+</section>
+<section style="padding: 96px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">CHI GIOCA CON NOI</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">Lingue diverse, un solo pallone.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3C4250">Ragazze e ragazzi dai Paesi dell'ex Unione Sovietica che vivono a Torino. La squadra è aperta a chiunque condivida le nostre linee guida etiche.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<article style="background: #F2F4F7; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; color: #C8401F">KZ</span><h3 style="font-size: 20px; font-weight: 600">Studenti kazaki</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">Del Politecnico di Torino.</p></article>
+<article style="background: #F2F4F7; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; color: #C8401F">UA</span><h3 style="font-size: 20px; font-weight: 600">Rifugiati ucraini</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">Arrivati a Torino dopo lo scoppio della guerra.</p></article>
+<article style="background: #F2F4F7; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; color: #C8401F">RU</span><h3 style="font-size: 20px; font-weight: 600">Figli di emigrati russi</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">Cresciuti tra due culture.</p></article>
+<article style="background: #F2F4F7; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; color: #C8401F">MD</span><h3 style="font-size: 20px; font-weight: 600">Giovani moldavi</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5B6170">Venuti in Italia per lavoro.</p></article>
+</div>
+</div>
+</section>
+<section id="ci-storia" style="background: #F2F4F7; padding: 96px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; color: #C8401F">LA NOSTRA STORIA</span>
+<h2 style="font-size: 44px; line-height: 1.1; font-weight: 800">Da un torneo di quartiere alle pagine dei giornali.</h2>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+<li style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; display: flex; gap: 24px; align-items: baseline"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; color: #0E6E66; min-width: 72px">2018</span><span style="font-size: 17px; line-height: 1.55">Nasce il gruppo per partecipare al Balon Mundial, il torneo delle comunità di Torino.</span></li>
+<li style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; display: flex; gap: 24px; align-items: baseline"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; color: #0E6E66; min-width: 72px">2022</span><span style="font-size: 17px; line-height: 1.55">Con la guerra in Ucraina la squadra diventa un esempio di integrazione: ne parlano media italiani e internazionali.</span></li>
+<li style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; display: flex; gap: 24px; align-items: baseline"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; color: #0E6E66; min-width: 72px">2022</span><span style="font-size: 17px; line-height: 1.55">Amichevole con l'ASD San Paolo Torino.</span></li>
+</ol>
+</div>
+</section>
+<section style="padding: 80px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 24px">
+<h2 style="font-size: 22px; font-weight: 600; color: #5B6170">Hanno parlato di noi</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
+<a href="#ci-storia" style="border: 1px solid #E6E8EC; border-radius: 18px; min-height: 96px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #1B1F2A; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">La Stampa</a>
+<a href="#ci-storia" style="border: 1px solid #E6E8EC; border-radius: 18px; min-height: 96px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #1B1F2A; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Sprint e Sport</a>
+<a href="#ci-storia" style="border: 1px solid #E6E8EC; border-radius: 18px; min-height: 96px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #1B1F2A; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Fanpage</a>
+<a href="#ci-storia" style="border: 1px solid #E6E8EC; border-radius: 18px; min-height: 96px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #1B1F2A; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">TV Svizzera</a>
+<a href="#ci-storia" style="border: 1px solid #E6E8EC; border-radius: 18px; min-height: 96px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #1B1F2A; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px">Futura News</a>
+</div>
+</div>
+</section>
+<section style="padding: 0 0 96px">
+<div class="wrap">
+<div style="background: #C8401F; color: #FFFFFF; border-radius: 28px; padding: 56px 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="font-size: 40px; line-height: 1.05; font-weight: 800">Vuoi giocare con noi?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #FCE4DC">Compila il modulo: ti ricontattiamo con giorni e orari degli allenamenti.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start">
+<a class="btn btn-yellow" href="https://forms.gle/dPamoQn5Lc6hvMgG8">Compila il modulo</a>
+<a class="btn btn-line" href="#ci-storia">Linee guida etiche</a>
+</div>
+</div>
+</div>
+</section>
+<footer style="background: #1B1F2A; color: #AEB4C0; padding: 32px 0">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<span>USPR Cirillico è un progetto di ConVoglio ONLUS · C.F. 97785290012</span>
+<span><a href="https://www.instagram.com/convoglioonlus" style="color: #AEB4C0">Instagram</a> · <a href="https://www.facebook.com/ConVoglioonlus" style="color: #AEB4C0">Facebook</a></span>
+</div>
+</footer>
+</div>
+</div>
+<div class="view" data-view="sp" hidden>
+<div style="width: 100%; min-height: 100vh; background: #FFFFFF">
+<header style="background: #062457">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 84px">
+<a href="#sp-top" aria-label="ASD San Paolo Torino, home" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #FFFFFF">
+<svg width="40" height="46" viewBox="0 0 40 46" fill="none" aria-hidden="true"><path d="M20 2l17 6v14c0 11-7.5 18.5-17 22C10.5 40.5 3 33 3 22V8l17-6z" fill="#FFFFFF"></path><path d="M20 5.5l14 5v11.5c0 9.3-6.2 15.6-14 18.7C12.2 37.6 6 31.3 6 22V10.5l14-5z" fill="#0B3D91"></path><path d="M14 8.3v29M20 5.5v35M26 8.3v29" stroke="#FFFFFF" stroke-width="3"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.02em">SAN PAOLO TORINO</span>
+<span style="font-size: 12px; letter-spacing: 0.16em; font-weight: 600; color: #BFD9FF; margin-top: 4px">A.S.D. · DAL QUARTIERE SAN PAOLO</span>
+</span>
+</a>
+<nav class="nav" aria-label="Menu principale" style="display: flex; gap: 28px">
+<a href="#sp-scuola">Scuola Calcio</a>
+<a href="#sp-squadre">Squadre</a>
+<a href="#sp-news">News</a>
+<a href="#sp-contatti">Contatti</a>
+</nav>
+<a class="btn btn-white hdr-cta" href="https://wa.me/393791317900" style="min-height: 46px">Prova gratuita</a>
+<details class="mnav menu-btn"><summary aria-label="Apri il menu" style="background:#0B3D91;color:#FFFFFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></summary><div class="panel" style="background:#FFFFFF"><a href="#sp-scuola" style="color:#0B3D91">Scuola Calcio</a><a href="#sp-squadre" style="color:#0B3D91">Squadre</a><a href="#sp-news" style="color:#0B3D91">News</a><a href="#sp-contatti" style="color:#0B3D91">Contatti</a><a href="https://wa.me/393791317900" style="background:#0B3D91;color:#FFFFFF;text-align:center;margin-top:6px">Prova gratuita</a></div></details>
+</div>
+</header>
+<section id="sp-top" class="stripes" style="color: #FFFFFF">
+<div class="wrap" style="padding-top: 96px; padding-bottom: 104px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: center">
+<div style="background: #062457; border-radius: 24px; padding: 48px; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: #BFD9FF">SOCIETÀ SPORTIVA DILETTANTISTICA</span>
+<h1 style="font-size: clamp(46px, 4.6vw, 66px); line-height: 0.95; font-weight: 800">Il calcio del quartiere.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #DCE7F7">Calcio a 11 maschile e calcio a 5 femminile in Via Tirreno 303. Scuola Calcio per bambine e bambini dai 5 anni in su.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-white" href="https://wa.me/393791317900">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+Prenota una prova gratuita</a>
+<a class="btn btn-outline" href="#sp-scuola">Scuola Calcio</a>
+</div>
+</div>
+<div style="height: 460px; border-radius: 24px; background: #E6EEFA; display: flex; align-items: center; justify-content: center; color: #3A4E73; font-size: 16px">Foto: squadra in campo</div>
+</div>
+</section>
+<section style="background: #FFFFFF; border-bottom: 1px solid #E1E7F0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0">
+<div style="padding: 28px 24px 28px 0; display: flex; gap: 16px; align-items: flex-start">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px; letter-spacing: 0.1em; color: #4A5D80">DOVE</strong><span style="font-size: 18px; font-weight: 600">Via Tirreno 303, 10136 Torino</span></span>
+</div>
+<div style="padding: 28px 24px; display: flex; gap: 16px; align-items: flex-start">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px; letter-spacing: 0.1em; color: #4A5D80">SCUOLA CALCIO</strong><span style="font-size: 18px; font-weight: 600">Mar e Gio, 17:30–19:00</span></span>
+</div>
+<div style="padding: 28px 24px; display: flex; gap: 16px; align-items: flex-start">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px; letter-spacing: 0.1em; color: #4A5D80">INFO E ISCRIZIONI</strong><a href="tel:+393791317900" style="font-size: 18px; font-weight: 600; text-decoration: none">379 131 7900</a></span>
+</div>
+</div>
+</section>
+<section id="sp-scuola" style="padding: 104px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: #0B3D91">SCUOLA CALCIO</span>
+<h2 style="font-size: 64px; line-height: 0.95; font-weight: 800">Vieni a giocare con noi.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #36456A">Per bambine e bambini dai 5 anni in su. Divertimento, amicizia e spirito di squadra.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 18px">
+<li style="display: flex; gap: 12px; align-items: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Allenatori qualificati e preparatori atletici</li>
+<li style="display: flex; gap: 12px; align-items: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Corsi per principianti e avanzati</li>
+<li style="display: flex; gap: 12px; align-items: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Tornei ed eventi sportivi</li>
+<li style="display: flex; gap: 12px; align-items: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B3D91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Lezioni di prova gratuite</li>
+</ul>
+</div>
+<div style="background: #EAF1FB; border-radius: 24px; padding: 40px; display: flex; flex-direction: column; gap: 20px">
+<h3 style="font-size: 30px; font-weight: 800">Orari allenamenti</h3>
+<div style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid #E1E7F0; font-size: 18px"><span style="font-weight: 600">Martedì</span><span>17:30 – 19:00</span></div>
+<div style="display: flex; justify-content: space-between; padding: 18px 22px; font-size: 18px"><span style="font-weight: 600">Giovedì</span><span>17:30 – 19:00</span></div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #36456A">La prima lezione è gratis. Scrivici su WhatsApp e ti diciamo in che gruppo inserire tuo figlio o tua figlia.</p>
+<a class="btn btn-navy" href="https://wa.me/393791317900">Prenota la prova su WhatsApp</a>
+</div>
+</div>
+</section>
+<section id="sp-squadre" style="background: #062457; color: #FFFFFF; padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: #BFD9FF">LE NOSTRE SQUADRE</span>
+<h2 style="font-size: 64px; line-height: 0.95; font-weight: 800">Un solo colore: biancoblu.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+<article style="background: #0B3D91; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div class="stripes" style="height: 180px; display: flex; align-items: center; justify-content: center; color: #DCE7F7; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 6px"><h3 style="font-size: 30px; font-weight: 800">Prima Squadra</h3><span style="font-size: 16px; color: #DCE7F7">Calcio a 11 maschile</span></div>
+</article>
+<article style="background: #0B3D91; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div class="stripes" style="height: 180px; display: flex; align-items: center; justify-content: center; color: #DCE7F7; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 6px"><h3 style="font-size: 30px; font-weight: 800">Under 19</h3><span style="font-size: 16px; color: #DCE7F7">Settore giovanile</span></div>
+</article>
+<article style="background: #0B3D91; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div class="stripes" style="height: 180px; display: flex; align-items: center; justify-content: center; color: #DCE7F7; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 6px"><h3 style="font-size: 30px; font-weight: 800">Femminile</h3><span style="font-size: 16px; color: #DCE7F7">Calcio a 5</span></div>
+</article>
+<article style="background: #FFFFFF; color: #0E1A33; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 180px; background: #EAF1FB; display: flex; align-items: center; justify-content: center; color: #3A4E73; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 6px"><h3 style="font-size: 30px; font-weight: 800; color: #0B3D91">Scuola Calcio</h3><span style="font-size: 16px; color: #36456A">Dai 5 anni in su</span></div>
+</article>
+</div>
+</div>
+</section>
+<section id="sp-news" style="padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: #0B3D91">NEWS</span>
+<h2 style="font-size: 64px; line-height: 0.95; font-weight: 800">Dal campo</h2>
+</div>
+<a href="https://instagram.com/san_paolo_torino" style="font-weight: 600; font-size: 17px">Seguici su Instagram →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<article style="border: 1px solid #E1E7F0; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 200px; background: #EAF1FB; display: flex; align-items: center; justify-content: center; color: #3A4E73; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #4A5D80">6 SETTEMBRE 2025 · SCUOLA CALCIO</span>
+<h3 style="font-size: 26px; font-weight: 800; line-height: 1.05">Riparte la Scuola Calcio: lezioni di prova gratuite</h3>
+<a href="#sp-news" style="font-weight: 600; font-size: 16px">Leggi →</a>
+</div>
+</article>
+<article style="border: 1px solid #E1E7F0; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 200px; background: #EAF1FB; display: flex; align-items: center; justify-content: center; color: #3A4E73; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #4A5D80">29 AGOSTO 2025 · PRIMA SQUADRA</span>
+<h3 style="font-size: 26px; font-weight: 800; line-height: 1.05">Benvenuto in famiglia, Luigi D'Elia</h3>
+<a href="#sp-news" style="font-weight: 600; font-size: 16px">Leggi →</a>
+</div>
+</article>
+<article style="border: 1px solid #E1E7F0; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 200px; background: #EAF1FB; display: flex; align-items: center; justify-content: center; color: #3A4E73; font-size: 15px">Foto</div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #4A5D80">30 LUGLIO 2025 · PRIMA SQUADRA</span>
+<h3 style="font-size: 26px; font-weight: 800; line-height: 1.05">Pubblicato il girone: si parte il 21 settembre</h3>
+<a href="#sp-news" style="font-weight: 600; font-size: 16px">Leggi →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="sp-contatti" style="background: #EAF1FB; padding: 104px 0">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em; color: #0B3D91">CONTATTI</span>
+<h2 style="font-size: 64px; line-height: 0.95; font-weight: 800">Ti aspettiamo in Via Tirreno.</h2>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 18px; line-height: 1.5">
+<span>Via Tirreno 303, 10136 Torino</span>
+<a href="tel:+393791317900" style="font-weight: 600">379 131 7900</a>
+<a href="mailto:info@sanpaolotorino.it" style="font-weight: 600">info@sanpaolotorino.it</a>
+<span style="color: #36456A">Lunedì – Domenica, 09:00 – 23:00</span>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Tirreno+303+10136+Torino" style="height: 220px; border-radius: 20px; background: #D3E0F3; display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; color: #0B3D91; font-size: 17px; font-weight: 600; text-decoration: none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Apri in Google Maps</a>
+</div>
+<form id="sp-contact" style="background: #FFFFFF; border-radius: 24px; padding: 40px; display: flex; flex-direction: column; gap: 18px">
+<h3 style="font-size: 30px; font-weight: 800">Scrivici</h3>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600">Nome<input class="field" type="text" name="nome" autocomplete="name" required></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600">Telefono<input class="field" type="tel" name="tel" autocomplete="tel"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600">Messaggio<textarea class="field" name="msg" required rows="4" style="padding: 14px 16px; min-height: 120px; resize: vertical"></textarea></label>
+<button type="submit" class="btn btn-navy" style="border: 0; cursor: pointer; font-family: Barlow, sans-serif">Prepara il messaggio</button>
+<a id="sp-wa-send" class="btn btn-navy" href="https://wa.me/393791317900" style="display: none; background: #25D366; color: #06331A">Apri WhatsApp e invia</a>
+</form>
+</div>
+</section>
+<footer style="background: #062457; color: #BFD9FF; padding: 48px 0">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; font-size: 15px">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF">SAN PAOLO TORINO</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="https://instagram.com/san_paolo_torino" style="color: #FFFFFF">Instagram</a><a href="https://www.facebook.com/119107861500842" style="color: #FFFFFF">Facebook</a><span>In rete con ConVoglio ONLUS</span></span>
+</div>
+</footer>
+</div>
+</div>
+<script>
+document.getElementById('cv-copycf').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText('97785290012'):Promise.reject()).then(function(){b.textContent='Copiato!';setTimeout(function(){b.textContent='Copia'},2000)}).catch(function(){b.textContent='97785290012'})});
+document.getElementById('cv-newsletter').addEventListener('submit',function(e){e.preventDefault();var m=this.email.value;var b=this.querySelector('button');b.textContent='Iscritto ✓';b.disabled=true});
+document.querySelectorAll('details.mnav .panel a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+var T={it:{sub:'UNIONE SPORTIVA PARLANTI RUSSO',lead:'Una squadra contro la guerra: qui l’amicizia vale più di ogni conflitto.',cta:'Unisciti alla squadra',cta2:'La nostra storia'},
+ru:{sub:'СПОРТИВНЫЙ СОЮЗ РУССКОГОВОРЯЩИХ',lead:'Команда против войны: здесь дружба сильнее любого конфликта.',cta:'Вступить в команду',cta2:'Наша история'},
+en:{sub:'RUSSIAN-SPEAKERS SPORTS UNION',lead:'A team against war: here friendship is stronger than any conflict.',cta:'Join the team',cta2:'Our story'}};
+function setLang(l){document.querySelectorAll('[data-i18n]').forEach(function(e){e.textContent=T[l][e.dataset.i18n]});
+document.querySelectorAll('[data-lang]').forEach(function(b){var on=b.dataset.lang===l;b.setAttribute('aria-pressed',on);b.style.background=on?'#F2B33D':'transparent';b.style.color=on?'#1B1F2A':'#D5D9E0'});
+document.documentElement.lang=l;}
+document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+document.getElementById('sp-contact').addEventListener('submit',function(e){e.preventDefault();var f=this;var t='Ciao! Sono '+f.nome.value+(f.tel.value?' ('+f.tel.value+')':'')+'.\n'+f.msg.value;var a=document.getElementById('sp-wa-send');a.href='https://wa.me/393791317900?text='+encodeURIComponent(t);a.style.display='inline-flex'});
+document.querySelectorAll('details.mnav .panel a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+function route(){var h=(location.hash||'').slice(1);var p=h.split('-')[0];if(!document.querySelector('[data-view="'+p+'"]'))p='cv';
+document.querySelectorAll('.view').forEach(function(v){v.hidden=v.dataset.view!==p});
+document.querySelectorAll('[data-tab]').forEach(function(a){if(a.dataset.tab===p)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+var el=h.indexOf('-')>0?document.getElementById(h):null;if(el)el.scrollIntoView();else window.scrollTo(0,0);}
+window.addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
